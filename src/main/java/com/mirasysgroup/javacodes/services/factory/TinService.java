@@ -1,13 +1,17 @@
 package com.mirasysgroup.javacodes.services.factory;
 
 import com.mirasysgroup.javacodes.enums.KycTypes;
+import com.mirasysgroup.javacodes.models.KycDataDto;
+import com.mirasysgroup.javacodes.models.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TinService implements KycServices{
     @Override
-    public String fetchKycService(String validationType) {
-        return "This is TIN service";
+    public ResponseEntity<Response> fetchKycService(String validationType, KycDataDto kycDataDto) {
+        return new ResponseEntity<>(Response.builder().description("something in TIN").build(), HttpStatus.OK);
     }
 
     @Override

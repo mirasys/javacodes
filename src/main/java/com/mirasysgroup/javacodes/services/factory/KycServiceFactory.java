@@ -1,5 +1,6 @@
 package com.mirasysgroup.javacodes.services.factory;
 
+import com.mirasysgroup.javacodes.exceptions.BadRequestException;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,10 +22,10 @@ public class KycServiceFactory {
         kycServicesList.forEach(x-> map.put(x.getValidationType(),x));
     }
 
-    public KycServices getInstance(String name) throws Exception {
+    public KycServices getInstance(String name) {
         var service = map.get(name);
         if(Objects.isNull(service))
-            throw new Exception("Invalid validation type");
+            throw new BadRequestException();
         return service;
     }
 

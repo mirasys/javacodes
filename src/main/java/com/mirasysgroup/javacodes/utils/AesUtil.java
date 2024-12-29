@@ -1,9 +1,6 @@
 package com.mirasysgroup.javacodes.utils;
 
-import com.google.gson.Gson;
 import com.mirasysgroup.javacodes.models.Response;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -40,41 +37,41 @@ public class AesUtil {
         return new String(decryptedBytes, StandardCharsets.UTF_8);
     }
 
-    public static void main(String[] args) throws Exception {
-//        AesUtil aesUtil = new AesUtil();
-//        String outcome = aesUtil.decrypt("Beba77xw1dF/cqlqu5HpAV4qVSo+PEGf/OiJaSLenjM=");
+//    public static void main(String[] args) throws Exception {
+////        AesUtil aesUtil = new AesUtil();
+////        String outcome = aesUtil.decrypt("Beba77xw1dF/cqlqu5HpAV4qVSo+PEGf/OiJaSLenjM=");
+////        System.out.println(outcome);
+//
+//        Response response1 = Response.builder()
+//                .code("200")
+//                .message("success")
+//                .httpStatusCode(HttpStatusCode.valueOf(200))
+//                .data("legumes")
+//                .description("done")
+//                .httpStatus(HttpStatus.OK)
+//                .build();
+//
+//        Response response2 = Response.builder()
+//                .code("200")
+//                .message("failed")
+//                .httpStatusCode(HttpStatusCode.valueOf(200))
+//                .data(null)
+//                .description("pending")
+//                .httpStatus(HttpStatus.OK)
+//                .build();
+//
+//        Map<String, String> results = compareObjects(response1,response2);
+//
+//
+//        for (Map.Entry<String, String> entry : results.entrySet()) {
+//            System.out.println(entry.getKey() + ": " + entry.getValue());
+//        }
+//
+//        Gson gson = new Gson();
+//        String outcome = gson.toJson(results);
 //        System.out.println(outcome);
-
-        Response response1 = Response.builder()
-                .code("200")
-                .message("success")
-                .httpStatusCode(HttpStatusCode.valueOf(200))
-                .data("legumes")
-                .description("done")
-                .httpStatus(HttpStatus.OK)
-                .build();
-
-        Response response2 = Response.builder()
-                .code("200")
-                .message("failed")
-                .httpStatusCode(HttpStatusCode.valueOf(200))
-                .data(null)
-                .description("pending")
-                .httpStatus(HttpStatus.OK)
-                .build();
-
-        Map<String, String> results = compareObjects(response1,response2);
-
-
-        for (Map.Entry<String, String> entry : results.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-
-        Gson gson = new Gson();
-        String outcome = gson.toJson(results);
-        System.out.println(outcome);
-
-    }
+//
+//    }
 
     public static Map<String, String> compareObjects(Response response1, Response response2) throws IllegalAccessException {
         Map<String, String> differences = new HashMap<>();
